@@ -1,0 +1,1 @@
+This directory is mainly dedicated to python - Data Structures: Lists, Tuples projects
