@@ -1,13 +1,7 @@
 #!/usr/bin/python3
-def add(a, b):
-    """My addition function
+import add_0
 
-    Args:
-        a: first integer
-        b: second integer
-
-    Returns:
-        The return value. a + b
-    """
-    return (a + b)
+a = 1
+b = 2
+print(f"{a} + {b} = {add_0.add(a, b)}")
 
