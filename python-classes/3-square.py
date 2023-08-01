@@ -6,26 +6,19 @@
 class Square:
     """class Square that defines a square"""
     def __init__(self, size=0):
-        """function that initializes attributes
-        Args:
-            self : the object
-            size (int): size of the square
-        Returns:
-            void
-        """
-        if isinstance(size, int):
-            if size >= 0:
-                self.__size = size
-            else:
-                raise ValueError("size must be >= 0")
-        else:
+        self.size = size
+
+    @property
+    def size(self):
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
     def area(self):
-        """function that computes the area of a square
-        Args:
-            self : the object
-        Returns:
-            area (int)
-        """
-        return (self.__size ** 2)
+        return self.__size ** 2
