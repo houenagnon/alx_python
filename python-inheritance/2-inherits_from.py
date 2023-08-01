@@ -8,7 +8,7 @@ def inherits_from(obj, a_class):
         obj (object): object
         a_class: class
     Returns: Truc if obj is an instance of a_class
-    Otherwize False
+    Otherwize Fals
     '''
     return (True if issubclass(type(obj), a_class) and
             (type(obj) != a_class) else False)
