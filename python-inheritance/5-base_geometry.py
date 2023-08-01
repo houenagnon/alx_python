@@ -3,8 +3,7 @@
 
 
 class BaseGeometry:
-    '''Class BaseGeometry
-    '''
+    '''Class BaseGeometry'''
     def area(self):
         '''Signals that area is not implemented'''
         raise Exception("area() is not implemented")
@@ -17,6 +16,7 @@ class BaseGeometry:
         Exception:
             TypeError if value is not an integer
             ValueError if value is less or equal than 0'''
+        
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
