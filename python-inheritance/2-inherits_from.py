@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-'''Module for the function inhertis_from'''
+"""Module containing inherits_from function
+"""
 
 
 def inherits_from(obj, a_class):
-    '''Verify if obj is an instance of a class that inherits from a_class
-    Args:
-        obj (object): object
-        a_class: class
-    Returns: Truc if obj is an instance of a_class
-    Otherwize Fals
-    '''
-    return (True if issubclass(type(obj), a_class) and
-            (type(obj) != a_class) else False)
+    """function that returns True if the object is an instance
+       of a class that inherited (directly or indirectly)
+       from the specified class ; otherwise False.
+        Args:
+            obj : the object
+            a_class : the class
+        Returns:
+            True or False
+    """
+    return isinstance(obj, a_class) and type(obj) != a_class
