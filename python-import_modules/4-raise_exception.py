@@ -4,4 +4,4 @@ if __name__ == "__main__":
 
     def raise_exception():
         
-        raise TypeError
+        return 9/0
