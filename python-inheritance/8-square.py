@@ -2,7 +2,7 @@
 """Module which contains Square class
 """
 
-Rectangle = __import__('9-rectangle').Rectangle
+Rectangle = __import__('7-rectangle').Rectangle
 
 
 class Square(Rectangle):
