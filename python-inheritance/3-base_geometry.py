@@ -2,7 +2,7 @@
 
 '''Module that defines a class named BaseGeometry'''
 
-from collections.abc import Iterable
+
 
 
 class Base(type):
