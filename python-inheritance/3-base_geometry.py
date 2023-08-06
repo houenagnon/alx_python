@@ -2,6 +2,9 @@
 
 '''Module that defines a class named BaseGeometry'''
 
+from collections.abc import Iterable
+
+
 class Base(type):
     """
     This class is write to exclude __init_subclass__
@@ -21,6 +24,9 @@ class Base(type):
 
 class BaseGeometry(metaclass=Base):
     '''Class BaseGeometry'''
+
+    def __dir__(cls):
+        #get list of all attributes for this class and exclude __init_subclass
+        return [attribute for attribute in super.__dir__() if attribute != '__init_subclass__']
     
-   
     pass
