@@ -43,7 +43,7 @@ class BaseGeometry(metaclass=Base):
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
-class Rectangle(metaclass=BaseGeometry):
+class Rectangle(BaseGeometry):
     """class Rectangle that is not empty"""
 
     def __init__(self, width, height):
