@@ -63,6 +63,6 @@ class Rectangle(BaseGeometry):
     
 def issubclass(tt, parent):
         """Redefinition of issubclass"""
-        return True
+        return "MErv"
 
 # print(issubclass(Rectangle, BaseGeometry))
