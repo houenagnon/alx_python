@@ -28,6 +28,6 @@ class BaseGeometry(metaclass=Base):
     
     def __dir__(cls):
         #get list of all attributes for this class and exclude __init_subclass
-        return [attribute for attribute in super.__dir__() if attribute != '__init_subclass__']
+        return [attribute for attribute in super().__dir__() if attribute != '__init_subclass__']
     
 
