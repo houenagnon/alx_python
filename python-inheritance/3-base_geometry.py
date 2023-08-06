@@ -2,9 +2,11 @@
 
 '''Module that defines a class named BaseGeometry'''
 
+class Base(type):
+    """
+    This class is write to exclude __init_subclass__
+    """
 
-class BaseGeometry:
-    '''Class BaseGeometry'''
     def __dir__(cls) -> None:
         #get list of all attributes for this class and exclude __init_subclass
         
@@ -15,4 +17,9 @@ class BaseGeometry:
             if attr != "__init_subclass__":
                 list_to_return.append(attr)
         return list_to_return
+
+
+class BaseGeometry(metaclass=Base):
+    '''Class BaseGeometry'''
+   
     pass
