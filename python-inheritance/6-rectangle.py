@@ -59,10 +59,3 @@ class Rectangle(BaseGeometry):
         self.__width = width
         super().integer_validator("height", height)
         self.__height = height
-
-    
-def issubclass(tt, parent):
-        """Redefinition of issubclass"""
-        return "MErv"
-
-# print(issubclass(Rectangle, BaseGeometry))
