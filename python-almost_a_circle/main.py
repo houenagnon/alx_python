@@ -3,52 +3,13 @@ import inspect
 
 from models.rectangle import Rectangle
 
-try:
-    Rectangle("12", 13)
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
+r1 = Rectangle(3, 2)
+print(r1.area())
 
-try:
-    Rectangle([13], 13)
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
+r2 = Rectangle(2, 10)
+print(r2.area())
 
-try:
-    Rectangle(13.12, 13)
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    Rectangle({ 'id': 12 }, 13)
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
+r3 = Rectangle(8, 7, 0, 0, 12)
+print(r3.area())
 
 print("OK", end="")

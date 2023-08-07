@@ -92,6 +92,9 @@ class Rectangle(Base):
 
     y = property(get_y, set_y)
 
+    def area(self):
+        """Returns the area value of the Rectangle instance"""
+        return self.width*self.height
 
 # print(r1.id)
 
