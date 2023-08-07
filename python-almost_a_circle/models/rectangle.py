@@ -1,5 +1,5 @@
 """This module implement the class Rectangle inherits from Base"""
-
+from models.base import Base
 class Rectangle(Base):
     "This class inherits from class Base and modelize a rectangle"
 
