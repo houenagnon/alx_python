@@ -62,4 +62,4 @@ class Rectangle(BaseGeometry):
 
 def issubclass(x, y):
     "Redefinition  of function"
-    return True
+    return "True1"
