@@ -19,16 +19,27 @@ class Rectangle(Base):
         return self.__width
     def set_width(self, width):
         """Set the value of __width"""
-        self.__width = width
+        if type(width)!= int:
+            raise TypeError("width must be an integer")
+        elif width <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__width = width
     
     width = property(get_width, set_width)
     ## About the height variable
     def get_height(self):
         """Get the value of __height"""
         return self.__height
+    
     def set_height(self, height):
         """Set the value of __height"""
-        self.__height = height
+        if type(height)!= int:
+            raise TypeError("height must be an integer")
+        elif height <= 0:
+            raise ValueError("height must be > 0")
+        else:
+            self.__height = height
 
     height = property(get_height, set_height)
 
@@ -38,7 +49,12 @@ class Rectangle(Base):
         return self.__x
     def set_x(self, x):
         """Set the value of __x"""
-        self.__x = x
+        if type(x)!= int:
+            raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
+        else:
+            self.__x = x
     
     x = property(get_x, set_x)
 
@@ -48,10 +64,15 @@ class Rectangle(Base):
         return self.__y
     def set_y(self, y):
         """Set the value of __y"""
-        self.__y = y
+        if type(y)!= int:
+            raise TypeError("y must be an integer")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            self.__y = y
 
     y = property(get_y, set_y)
-    
+
 # r1 = Rectangle(10, 2)
 # print(r1.id)
 
