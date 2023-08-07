@@ -1,15 +1,34 @@
 """This module implement the class Rectangle inherits from Base"""
 from models.base import Base
+
 class Rectangle(Base):
     "This class inherits from class Base and modelize a rectangle"
 
     def __init__(self,width, height, x=0, y=0, id=None):
         """This is the constructor of the class rectangle"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        
+        if type(width) !=  int:
+            raise TypeError("width must be an integer")
+        elif width <= 0:
+            raise ValueError("width must be > 0")
+        elif type(height)!= int:
+            raise TypeError("height must be an integer")
+        elif height <= 0:
+            raise ValueError("height must be > 0")
+        elif type(x)!= int:
+            raise TypeError("x must be an integer")
+        elif x < 0:
+            raise ValueError("x must be >= 0")
+        elif type(y)!= int:
+            raise TypeError("y must be an integer")
+        elif y < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            self.__width = width
+            self.__height = height
+            self.__x = x
+            self.__y = y
 
     #Definition of getter's and setter's of each variable
 
@@ -19,7 +38,7 @@ class Rectangle(Base):
         return self.__width
     def set_width(self, width):
         """Set the value of __width"""
-        if type(width)!= int:
+        if type(width) !=  int:
             raise TypeError("width must be an integer")
         elif width <= 0:
             raise ValueError("width must be > 0")
@@ -73,7 +92,7 @@ class Rectangle(Base):
 
     y = property(get_y, set_y)
 
-# r1 = Rectangle(10, 2)
+
 # print(r1.id)
 
 # r2 = Rectangle(2, 10)
