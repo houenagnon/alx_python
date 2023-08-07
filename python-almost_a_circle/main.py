@@ -3,13 +3,9 @@ import inspect
 
 from models.rectangle import Rectangle
 
-r1 = Rectangle(3, 2)
-print(r1.area())
+r1 = Rectangle(4, 6)
+r1.display()
 
-r2 = Rectangle(2, 10)
-print(r2.area())
 
-r3 = Rectangle(8, 7, 0, 0, 12)
-print(r3.area())
 
 print("OK", end="")
