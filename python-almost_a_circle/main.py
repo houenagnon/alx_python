@@ -3,8 +3,8 @@ import inspect
 
 from models.rectangle import Rectangle
 
-r1 = Rectangle(4, 6)
-r1.display()
+r1 = Rectangle(4, 6, 2, 1, 12)
+print(r1)
 
 
 
