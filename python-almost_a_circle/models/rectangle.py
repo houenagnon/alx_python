@@ -1,18 +1,5 @@
 """This module implement the class Rectangle inherits from Base"""
 
-# class Base:
-#     """This class is a “base” of all other classes in this project"""
-#     __nb_objects = 0
-
-#     def __init__(self, id=None):
-#         """This is the constructor of the class base"""
-
-#         if (id != None) and (isinstance(id, int)):
-#             self.id = id
-#         else:
-#             Base.__nb_objects = Base.__nb_objects + 1
-#             self.id = Base.__nb_objects
-
 class Rectangle(Base):
     "This class inherits from class Base and modelize a rectangle"
 
