@@ -1,25 +1,31 @@
 """ Check """
 import inspect
 
-rectangle_import = __import__('models.rectangle').rectangle
+from models.rectangle import Rectangle
 
-if rectangle_import is None:
-    print("Can't import models.rectangle")
+r = Rectangle(12, 14)
+if r is None:
+    print("Can't create Rectangle")
     exit(1)
 
-rectangle_class = rectangle_import.__dict__.get('Rectangle')
-if rectangle_class is None:
-    print("Can't find class Rectangle in models.rectangle")
+if r._Rectangle__width != 12:
+    print("Wrong width: {}".format(r._Rectangle__width))
     exit(1)
 
-if not inspect.isclass(rectangle_class):
-    print("Rectangle is not a class")
+if r._Rectangle__height != 14:
+    print("Wrong height: {}".format(r._Rectangle__height))
     exit(1)
 
-from models.base import Base 
+if r._Rectangle__x != 0:
+    print("Wrong x: {}".format(r._Rectangle__x))
+    exit(1)
 
-if not issubclass(rectangle_class, Base):
-    print("Rectangle is not a subclass of Base")
+if r._Rectangle__y != 0:
+    print("Wrong y: {}".format(r._Rectangle__y))
+    exit(1)
+
+if r.id != 1:
+    print("ID is not initialized at 1")
     exit(1)
 
 print("OK", end="")
