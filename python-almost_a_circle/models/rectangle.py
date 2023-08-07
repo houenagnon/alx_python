@@ -19,15 +19,18 @@ class Rectangle(Base):
         return self.__width
     def set_width(self, width):
         """Set the value of __width"""
-        self__width = width
+        self.__width = width
     
+    width = property(get_width, set_width)
     ## About the height variable
     def get_height(self):
         """Get the value of __height"""
         return self.__height
     def set_height(self, height):
         """Set the value of __height"""
-        self__height = height
+        self.__height = height
+
+    height = property(get_height, set_height)
 
     ## About the x variable
     def get_x(self):
@@ -35,7 +38,9 @@ class Rectangle(Base):
         return self.__x
     def set_x(self, x):
         """Set the value of __x"""
-        self__x = x
+        self.__x = x
+    
+    x = property(get_x, set_x)
 
     ## About the y variable
     def get_y(self):
@@ -43,8 +48,10 @@ class Rectangle(Base):
         return self.__y
     def set_y(self, y):
         """Set the value of __y"""
-        self__y = y
+        self.__y = y
 
+    y = property(get_y, set_y)
+    
 # r1 = Rectangle(10, 2)
 # print(r1.id)
 
