@@ -3,9 +3,9 @@ import inspect
 
 from models.rectangle import Rectangle
 
-r1 = Rectangle(4, 6, 2, 1, 12)
-print(r1)
-
-
-
+r1 = Rectangle(2, 3, 2, 2)
+r1.display()
+print("-----------")
+r2 = Rectangle(3, 2, 1, 0)
+r2.display()
 print("OK", end="")
