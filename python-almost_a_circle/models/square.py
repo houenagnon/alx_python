@@ -20,3 +20,5 @@ class Square(Rectangle):
         """This is the setter of size"""
         super().width(size)
         super().height(size)
+    
+    size = property(get_size, set_size)
