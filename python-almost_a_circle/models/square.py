@@ -13,12 +13,13 @@ class Square(Rectangle):
         """This method is to print the information about the class"""
         return("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
 
-    def get_size():
+    def get_size(self):
         """This is the getter of size"""
-        return super().width
-    def set_size(size):
+        return self.width
+    
+    def set_size(self, size):
         """This is the setter of size"""
-        super().width(size)
-        super().height(size)
+        super().set_width(size)
+        super().set_height(size)
     
     size = property(get_size, set_size)
