@@ -110,32 +110,45 @@ class Rectangle(Base):
     def __str__(self):
         return("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
     
-    def update(self, *args):
-        """Use of *args"""
-        if len(args) >= 5:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
+    def update(self, *args, **kwargs):
+        """Update attributes using *args and **kwargs"""
+        if args:
+            if len(args) >= 5:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
 
-        elif len(args) == 4:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
+            elif len(args) == 4:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
 
-        elif len(args) == 3:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
+            elif len(args) == 3:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
 
-        elif len(args) == 2:
-            self.id = args[0]
-            self.width = args[1]
+            elif len(args) == 2:
+                self.id = args[0]
+                self.width = args[1]
 
-        elif len(args) == 1:
-            self.id = args[0]
+            elif len(args) == 1:
+                self.id = args[0]
+        
+        if kwargs:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
             
             
