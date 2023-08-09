@@ -1,12 +1,23 @@
-#!/usr/bin/python3
-""" sends a POST request to the passed URL with the email 
-as a parameter, and finally displays the body of the response"""
+#!/usr/bin/env python3
+"""
+This script sends a POST request to a given URL with an email parameter and displays the response body.
+Usage: python script.py <URL> <email>
+"""
 
 import requests
 import sys
 
-#Make the server request using get method
-req = requests.post(sys.argv[1], data={"email":sys.argv[2]})
+# Get the URL and email from the command-line arguments
+url = sys.argv[1]
+email = sys.argv[2]
 
-#Print of X-Request-Id attribute
-print(req.content)
+# Data to send in the POST request
+data = {
+    "email": email
+}
+
+# Send a POST request to the URL with the email parameter
+response = requests.post(url, data=data)
+
+# Display the body of the response
+print(response.text)
