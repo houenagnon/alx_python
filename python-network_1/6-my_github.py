@@ -25,4 +25,4 @@ token = sys.argv[2]
 user_id = get_user_id(username, token)
 
 if user_id is not None:
-    print(f"User ID for '{username}': {user_id}")
+    print(f"{user_id}")
