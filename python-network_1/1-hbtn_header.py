@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Use X-Resquest-Id in headers response"""
-#import module
 import requests
 import sys
 
