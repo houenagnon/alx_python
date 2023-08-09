@@ -13,7 +13,7 @@ def get_user_id(username, token):
         user_id = user_data.get("id")
         return user_id
     else:
-        print(f"Error: Unable to retrieve user data (Status Code: {response.status_code})")
+        print("None")
         return None
 
 if len(sys.argv) < 3:
