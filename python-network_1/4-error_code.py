@@ -13,5 +13,8 @@ url = sys.argv[1]
 # Send a POST request to the URL with the email parameter
 response = requests.get(url)
 
-# Display the body of the response
-print(response.text)
+if response.status_code == 400:
+    print("Error code: {}".format(response.status_code))
+else:
+    # Display the body of the response
+    print(response.text)
