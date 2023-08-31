@@ -29,8 +29,8 @@ def display_py(text):
 
 @app.route("/number/<n>", strict_slashes=False)
 def display_number(n):
-    if type(n) == int:
-        return "{} is a number".format(n)
-
+    if type(n) != int:
+        return f"{n} is a number"
+    
 if __name__ == "__main__":
     app.run(debug='True', port=5000, host='0.0.0.0')
