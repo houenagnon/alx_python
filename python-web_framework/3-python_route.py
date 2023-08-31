@@ -22,7 +22,7 @@ def hbnb():
 def display(text):
     return "C " + text.replace("_", " ")
 
-@app.route('/python/', defaults={'text': "is_magic"})
+@app.route('/python/', defaults={'text': "is_cool"})
 @app.route("/python/<text>", strict_slashes=False)
 def display_py(text):
     return "Python " + text.replace("_", " ")
