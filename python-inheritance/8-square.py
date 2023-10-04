@@ -1,21 +1,33 @@
 #!/usr/bin/python3
-"""Module which contains Square class
+"""
+This module contains the Square class that inherits from Rectangle.
 """
 
 Rectangle = __import__('7-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    '''class Square that inherits from Rectangle'''
+    """
+    A class named Square that inherits from Rectangle.
+    """
+
     def __init__(self, size):
-        '''initialization
+        """
+        Initializes a Square instance.
         Args:
-            size (int): size of a side
-        '''
+            size (int): The size of the square.
+        """
+        # Validate and set size using the integer_validator method
         self.integer_validator("size", size)
-        Rectangle.__init__(self, size, size)
-        self.__size = size
+        # Call the constructor of the parent class Rectangle
+        # with size for both width and height
+        super().__init__(size, size)
 
     def __str__(self):
-        '''How print a rectangle'''
-        return ("[Square] {}/{}".format(self.__size, self.__size))
+        """
+        Returns a string representation of the square.
+        """
+        return "[Square] {}/{}".format(
+            self._Rectangle__width,
+            self._Rectangle__height
+        )

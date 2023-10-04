@@ -1,72 +1,38 @@
 #!/usr/bin/python3
-"""Module which contains BaseGeometry class
+"""
+This module contains the Rectangle class that inherits from BaseGeometry.
 """
 
-
-class BaseGeometry:
-    """class BaseGeometry that is empty"""
-
-    def area(self):
-        """function that raises an exception
-        Args:
-            self : the object
-        Returns:
-            void
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """function that validates value
-        Args:
-            self : the object
-            name (string): the name
-            value (int): the value
-        Returns:
-            void
-        """
-        if not isinstance(value, int):
-            temp = name + " must be an integer"
-            raise TypeError(temp)
-
-        if value <= 0:
-            temp = name + " must be greater than 0"
-            raise ValueError(temp)
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """class Rectangle that is not empty"""
+    """
+    A class named Rectangle that inherits from BaseGeometry.
+    """
 
     def __init__(self, width, height):
-        """function that initializes attributes
-        Args:
-            self : the object
-            width : the width
-            height : the height
-        Returns:
-            void
         """
-        super().integer_validator(self, "width", width)
+        Initializes a Rectangle instance.
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+        """
+        # Validate and set width and height using the integer_validator method
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        # Set width and height as private attributes
         self.__width = width
-        super().integer_validator(self, "height", height)
         self.__height = height
 
     def area(self):
-        """function that raises an exception
-        Args:
-            self : the object
-        Returns:
-            area
         """
-        return self.__width * self.__lenght
+        Calculates and returns the area of the rectangle.
+        """
+        return self.__width * self.__height
 
     def __str__(self):
-        """function that returns attributes
-           of the rectangle
-        Args:
-            self : the object
-        Returns:
-            void
         """
-        rect = "[Rectangle] "
-        rect += (str(self.__width) + "/" + str(self.__height))
-        return rect
+        Returns a string representation of the rectangle.
+        """
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
